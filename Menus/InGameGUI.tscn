@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Fonts/rainyhearts.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Menus/SpeedrunTimer.gd" type="Script" id=2]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LevelNumber" type="RichTextLabel" parent="."]
+margin_left = 3.0
+margin_right = 256.0
+margin_bottom = 40.0
+custom_fonts/normal_font = ExtResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Level: "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SpeedrunTimer" type="RichTextLabel" parent="."]
+margin_left = 213.0
+margin_right = 461.0
+margin_bottom = 40.0
+custom_fonts/normal_font = ExtResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "00:00:00"
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

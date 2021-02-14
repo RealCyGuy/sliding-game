@@ -1,0 +1,116 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://Player/player.png" type="Texture" id=1]
+[ext_resource path="res://Player/Player.gd" type="Script" id=2]
+[ext_resource path="res://background.png" type="Texture" id=3]
+[ext_resource path="res://Player/Camera/GridSnapper.gd" type="Script" id=4]
+[ext_resource path="res://Menus/InGameGUI.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Audio/Jump.wav" type="AudioStream" id=6]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 1 )
+region = Rect2( 16, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 1 )
+region = Rect2( 32, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 1 )
+region = Rect2( 48, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 1 )
+region = Rect2( 64, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 1 )
+region = Rect2( 80, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 1 )
+region = Rect2( 96, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 1 )
+region = Rect2( 112, 0, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=9]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 5.02714, 6.02494 )
+
+[sub_resource type="Gradient" id=11]
+offsets = PoolRealArray( 0, 0.717489, 1 )
+colors = PoolColorArray( 0.582031, 0.979183, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0 )
+
+[sub_resource type="RectangleShape2D" id=12]
+extents = Vector2( 4.99219, 0.0508127 )
+
+[node name="Player" type="KinematicBody2D"]
+script = ExtResource( 2 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 9 )
+frame = 5
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 1.99451 )
+shape = SubResource( 10 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground"]
+texture = ExtResource( 3 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 256, 192 )
+
+[node name="GridSnapper" type="Position2D" parent="."]
+script = ExtResource( 4 )
+
+[node name="Camera2D" type="Camera2D" parent="GridSnapper"]
+current = true
+smoothing_enabled = true
+
+[node name="Control" parent="GridSnapper/Camera2D" instance=ExtResource( 5 )]
+margin_left = -128.0
+margin_top = -80.0
+margin_right = -128.0
+margin_bottom = -80.0
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2( 0, 8.157 )
+amount = 4
+lifetime = 0.15
+lifetime_randomness = 0.25
+fract_delta = false
+local_coords = false
+emission_shape = 2
+emission_rect_extents = Vector2( 2.5, 0 )
+direction = Vector2( 0, -90 )
+spread = 25.0
+gravity = Vector2( 0, 10 )
+initial_velocity = 35.0
+initial_velocity_random = 0.6
+color_ramp = SubResource( 11 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 6 )
+
+[node name="PlayerBottom" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerBottom"]
+position = Vector2( 0, 7.95681 )
+shape = SubResource( 12 )
