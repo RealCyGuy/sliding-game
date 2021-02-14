@@ -25,7 +25,7 @@ run/main_scene="res://Level.tscn"
 
 [autoload]
 
-Global="*res://Global.gd"
+Global="*res://Other Scripts/Global.gd"
 
 [display]
 
