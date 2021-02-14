@@ -1,19 +1,21 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Fonts/rainyhearts.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Menus/SpeedrunTimer.gd" type="Script" id=2]
+[ext_resource path="res://Menus/InGameGUI.gd" type="Script" id=3]
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="LevelNumber" type="RichTextLabel" parent="."]
 margin_left = 3.0
-margin_right = 256.0
-margin_bottom = 40.0
+margin_right = 64.0
+margin_bottom = 16.0
 custom_fonts/normal_font = ExtResource( 1 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Level: "
@@ -23,8 +25,8 @@ __meta__ = {
 
 [node name="SpeedrunTimer" type="RichTextLabel" parent="."]
 margin_left = 213.0
-margin_right = 461.0
-margin_bottom = 40.0
+margin_right = 272.0
+margin_bottom = 16.0
 custom_fonts/normal_font = ExtResource( 1 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "00:00:00"
@@ -32,3 +34,38 @@ script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="QuitButton" type="RichTextLabel" parent="."]
+margin_left = 64.0
+margin_right = 112.0
+margin_bottom = 16.0
+mouse_default_cursor_shape = 2
+custom_fonts/normal_font = ExtResource( 1 )
+custom_colors/default_color = Color( 0.427451, 0.427451, 0.427451, 1 )
+bbcode_enabled = true
+bbcode_text = "[right][url]Quit[/url][/right]"
+meta_underlined = false
+text = "Quit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RestartButton" type="RichTextLabel" parent="."]
+margin_left = 120.0
+margin_right = 168.0
+margin_bottom = 16.0
+custom_fonts/normal_font = ExtResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+bbcode_enabled = true
+bbcode_text = "[url]Restart[/url]"
+meta_underlined = false
+text = "Restart"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="meta_clicked" from="QuitButton" to="." method="_on_QuitButton_meta_clicked"]
+[connection signal="meta_hover_ended" from="QuitButton" to="." method="_on_QuitButton_meta_hover_ended"]
+[connection signal="meta_hover_started" from="QuitButton" to="." method="_on_QuitButton_meta_hover_started"]
+[connection signal="meta_clicked" from="RestartButton" to="." method="_on_RestartButton_meta_clicked"]
+[connection signal="meta_hover_ended" from="RestartButton" to="." method="_on_RestartButton_meta_hover_ended"]
+[connection signal="meta_hover_started" from="RestartButton" to="." method="_on_RestartButton_meta_hover_started"]
