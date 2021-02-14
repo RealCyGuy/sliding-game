@@ -67,10 +67,6 @@ position = Vector2( 144, 112 )
 rotation = -1.5708
 
 [node name="Checkpoint10" parent="Checkpoints" instance=ExtResource( 3 )]
-position = Vector2( -112, 240 )
-rotation = -1.5708
-
-[node name="Checkpoint11" parent="Checkpoints" instance=ExtResource( 3 )]
 position = Vector2( -112, 256 )
 rotation = -1.5708
 
