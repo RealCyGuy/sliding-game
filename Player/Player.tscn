@@ -59,7 +59,7 @@ script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 9 )
-frame = 2
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -72,7 +72,7 @@ shape = SubResource( 10 )
 texture = ExtResource( 3 )
 centered = false
 region_enabled = true
-region_rect = Rect2( 0, 0, 256, 192 )
+region_rect = Rect2( 0, 0, 256, 160 )
 
 [node name="GridSnapper" type="Position2D" parent="."]
 script = ExtResource( 4 )

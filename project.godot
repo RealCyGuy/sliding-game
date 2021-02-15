@@ -21,11 +21,12 @@ _global_script_class_icons={
 [application]
 
 config/name="Sliding Game"
-run/main_scene="res://Level.tscn"
+run/main_scene="res://Menus/Menu.tscn"
 
 [autoload]
 
 Global="*res://Other Scripts/Global.gd"
+SceneChanger="*res://SceneChanger.tscn"
 
 [display]
 
@@ -56,3 +57,4 @@ jump={
 quality/driver/driver_name="GLES2"
 vram_compression/import_etc=true
 vram_compression/import_etc2=false
+environment/default_clear_color=Color( 0.301961, 0.815686, 0.882353, 1 )

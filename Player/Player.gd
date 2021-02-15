@@ -17,26 +17,27 @@ func _ready():
 	incrementLevel()
 
 func _physics_process(delta):
-	velocity.y += delta * GRAVITY
-	
-	velocity.x = direction.x * SLIDE_SPEED
+	if Global.move:
+		velocity.y += delta * GRAVITY
 		
-	velocity = move_and_slide(velocity, Vector2(0, -1))
-	if is_on_floor():
-		$CPUParticles2D.modulate.a = 1
-		if Input.is_action_pressed("jump"):
-			velocity.y = -JUMP_SPEED
-			$AudioStreamPlayer2D.play()
-	else:
-		$CPUParticles2D.modulate.a = 0.01
-		
-	if is_on_wall():
-		if direction == left:
-			direction = right
-			get_node("AnimatedSprite").set_flip_h(false)
-		elif direction == right:
-			direction = left
-			get_node("AnimatedSprite").set_flip_h(true)
+		velocity.x = direction.x * SLIDE_SPEED
+			
+		velocity = move_and_slide(velocity, Vector2(0, -1))
+		if is_on_floor():
+			$CPUParticles2D.modulate.a = 1
+			if Input.is_action_pressed("jump"):
+				velocity.y = -JUMP_SPEED
+				$AudioStreamPlayer2D.play()
+		else:
+			$CPUParticles2D.modulate.a = 0.01
+			
+		if is_on_wall():
+			if direction == left:
+				direction = right
+				get_node("AnimatedSprite").set_flip_h(false)
+			elif direction == right:
+				direction = left
+				get_node("AnimatedSprite").set_flip_h(true)
 			
 func incrementLevel():
 	levelNumber += 1
