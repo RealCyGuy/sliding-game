@@ -26,7 +26,6 @@ run/main_scene="res://Menus/Menu.tscn"
 [autoload]
 
 Global="*res://Other Scripts/Global.gd"
-SceneChanger="*res://SceneChanger.tscn"
 BackgroundMusic="*res://Audio/Background Music.tscn"
 
 [display]
