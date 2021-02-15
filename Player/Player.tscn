@@ -59,7 +59,7 @@ script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 9 )
-frame = 7
+frame = 5
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -105,6 +105,7 @@ color_ramp = SubResource( 11 )
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 6 )
+attenuation = 0.0291576
 
 [node name="JumpBuffer" type="Timer" parent="."]
 wait_time = 0.1

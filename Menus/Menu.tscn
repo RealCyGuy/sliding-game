@@ -146,20 +146,20 @@ __meta__ = {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 16, 141 )
 frames = SubResource( 10 )
-frame = 2
+frame = 1
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="."]
 position = Vector2( 152, 141 )
 frames = SubResource( 10 )
-frame = 4
+frame = 3
 playing = true
 
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="."]
 position = Vector2( 162, 91.5 )
 scale = Vector2( 1.875, 1.875 )
 frames = SubResource( 10 )
-frame = 5
+frame = 4
 playing = true
 flip_h = true
 
@@ -167,14 +167,14 @@ flip_h = true
 position = Vector2( 28, 26 )
 scale = Vector2( 2.5, 2.5 )
 frames = SubResource( 10 )
-frame = 5
+frame = 4
 playing = true
 
 [node name="AnimatedSprite5" type="AnimatedSprite" parent="."]
 position = Vector2( 163, 78 )
 scale = Vector2( 0.750001, 0.75 )
 frames = SubResource( 10 )
-frame = 2
+frame = 1
 playing = true
 flip_h = true
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
