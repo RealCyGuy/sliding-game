@@ -29,7 +29,7 @@ func _physics_process(delta):
 			if Input.is_action_pressed("jump") || !jumpBuffer.is_stopped():
 				jumpBuffer.stop()
 				velocity.y = -JUMP_SPEED
-				$AudioStreamPlayer2D.play()
+				$AudioStreamPlayer.play()
 		else:
 			if Input.is_action_pressed("jump"):
 				jumpBuffer.start()
