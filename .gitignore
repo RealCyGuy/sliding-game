@@ -6,3 +6,9 @@ bin/
 build/
 lib/
 Build.zip
+Android/Sliding Game.apk
+
+# .history
+.history
+
+export_presets.cfg
