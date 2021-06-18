@@ -341,8 +341,54 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="score1" type="RichTextLabel" parent="Text"]
+margin_left = -368.0
+margin_top = 363.0
+margin_right = -296.0
+margin_bottom = 379.0
+custom_fonts/normal_font = ExtResource( 4 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+bbcode_enabled = true
+bbcode_text = "[center]1: 01:04.12[/center]"
+text = "1: 01:04.12"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="score2" type="RichTextLabel" parent="Text"]
+margin_left = -296.0
+margin_top = 363.0
+margin_right = -216.0
+margin_bottom = 379.0
+custom_fonts/normal_font = ExtResource( 4 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+bbcode_enabled = true
+bbcode_text = "[center]2: 01:12.03[/center]"
+text = "2: 01:12.03"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="score3" type="RichTextLabel" parent="Text"]
+margin_left = -216.0
+margin_top = 363.0
+margin_right = -144.0
+margin_bottom = 379.0
+custom_fonts/normal_font = ExtResource( 4 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+bbcode_enabled = true
+bbcode_text = "[center]3: 00:00.00[/center]"
+text = "3: 00:00.00"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="End Game" type="Area2D" parent="."]
 script = ExtResource( 5 )
+scoreLabels = [ NodePath("../Text/score1"), NodePath("../Text/score2"), NodePath("../Text/score3") ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="End Game"]
 position = Vector2( -160, 256 )
@@ -354,8 +400,9 @@ script = ExtResource( 6 )
 
 [node name="Quit" type="Button" parent="Game Over Buttons"]
 margin_left = -64.0
+margin_top = -8.0
 margin_right = -12.0
-margin_bottom = 20.0
+margin_bottom = 12.0
 mouse_default_cursor_shape = 2
 custom_styles/focus = SubResource( 2 )
 custom_fonts/font = ExtResource( 4 )
@@ -369,9 +416,10 @@ __meta__ = {
 }
 
 [node name="Restart" type="Button" parent="Game Over Buttons"]
-margin_left = 12.0
-margin_right = 65.0
-margin_bottom = 20.0
+margin_left = 8.0
+margin_top = -8.0
+margin_right = 61.0
+margin_bottom = 12.0
 mouse_default_cursor_shape = 2
 custom_styles/focus = SubResource( 2 )
 custom_fonts/font = ExtResource( 4 )
